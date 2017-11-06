@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Laundro</string>
+
+    <string name="cleanInfo">Clean_info</string>
+
+    <string name="fabric">Type of Fabric</string>
+    
+    <string-array name="fabric_array">
+        <item>Type of Fabric</item>
+        <item>Cotton</item>
+        <item>Silk</item>
+        <item>Polyester</item>
+        <item>Wool</item>
+        <item>Nylon</item>
+        <item>Rayon</item>
+        <item>Spandex(LYCRA)</item>
+    </string-array>
+    
+    
+    <string name="stain">Stain</string>
+    <string name="cleanmethod">cleanMethod</string>
+
+    <string-array name="stain_array">
+        <item>Type of Stain</item>
+        <item>Coffee</item>
+        <item>Grass</item>
+        <item>Candle Wax</item>
+        <item>Mud</item>
+        <item>Wine</item>
+        <item>Chewing Gum</item>
+        <item>Ketchup</item>
+        <item>Ink</item>
+        <item>Grease</item>
+        <item>Sweat</item>
+        <item>Hot Sauce</item>
+    </string-array>
+
+
+
+</resources>
