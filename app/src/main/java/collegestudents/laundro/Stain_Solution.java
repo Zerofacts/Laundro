@@ -3,6 +3,8 @@ package collegestudents.laundro;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,6 +20,23 @@ public class Stain_Solution extends Activity {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         setContentView(R.layout.stain_solver);
+
+
+        Spinner SpiFabric = findViewById(R.id.Fabric);
+        final String Fabric = SpiFabric.getSelectedItem().toString();
+
+        Spinner SpiStain = findViewById(R.id.Stain);
+        final String Stain = SpiStain.getSelectedItem().toString();
+
+        final Button Solution = (Button) findViewById(R.id.StainSubmit);
+        Solution.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setContentView(R.layout.stain_solution);
+            }
+        });
+
+
 
         // 1. get passed intent
         Intent intent = getIntent();

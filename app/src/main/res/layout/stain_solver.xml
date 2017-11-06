@@ -33,5 +33,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/Stain"
         android:layout_centerHorizontal="true"
-        android:text="Submit" />
+        android:text="Submit"
+        android:onClick="ToStainSolution"/>
 </RelativeLayout>

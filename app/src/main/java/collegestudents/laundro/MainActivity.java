@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
 
@@ -12,22 +13,12 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
     Spinner Fabric, Stains;
     String Str_Fabric, Str_Stains;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.stain_solver);
-
-
-        Fabric = (Spinner) findViewById(R.id.Fabric);
-        Str_Fabric= Fabric.getSelectedItem().toString();
-
-        Stains = (Spinner) findViewById(R.id.Stain);
-        Str_Stains = Stains.getSelectedItem().toString();
-
-        Button StainSubmit = (Button) findViewById(R.id.StainSubmit);
-
-
-
 
     }
 
@@ -39,6 +30,13 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
         extras.putString("status", "Data Received!");
         intent.putExtras(extras);
         startActivity(intent);
+
+    }
+
+    public void ToStainSolution(View view) {
+
+
+        Button StainSubmit = (Button) findViewById(R.id.StainSubmit);
 
     }
 }
