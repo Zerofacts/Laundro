@@ -35,6 +35,8 @@
         <item>Hot Sauce</item>
     </string-array>
 
-
+    <!--activity_reminder strings-->
+    <string name="reminderLabel">Reminder</string>
+    <string name="setReminderButton">Set Reminder</string>
 
 </resources>
