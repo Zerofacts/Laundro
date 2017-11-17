@@ -8,6 +8,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
 
+/*//////////////////////////////////////////////////////////////////////////////////////////////
+    Whoever implements the timer, make sure to use a "chronometer". As prof Kochanov mentioned
+    in class, a "countdown" from API 24 will not work because she will be building the app using
+    API 23. So make sure to use a "chronometer" and not a "countdown".
+*///////////////////////////////////////////////////////////////////////////////////////////////
+
 public class MainActivity extends AppCompatActivity implements DialogInterface.OnClickListener {
 
     Spinner Fabric, Stains;
