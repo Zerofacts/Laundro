@@ -1,43 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="10dp">
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <DatePicker
-            android:id="@+id/reminderDP">
-            <!--Finish date picker-->
-        </DatePicker>
-    </TableRow>
-
-    <TableRow
+    <TextView
+        android:id="@+id/dayLabel"
+        android:paddingRight="5dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/dayET"
+        android:layout_alignBottom="@id/dayET"
+        android:text="@string/dayLabel"/>
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:labelFor="@+id/reminderTV"
-            android:text="@string/reminderLabel"/>
+    <EditText
+        android:id="@+id/dayET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/dayLabel"
+        android:hint="7"
+        android:inputType="number"/>
 
-        <EditText
-            android:id="@+id/reminderTV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="bedsheets"/>
-    </TableRow>
+    <TextView
+        android:id="@+id/reminderLabel"
+        android:paddingRight="5dp"
+        android:paddingBottom="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/reminderTV"
+        android:text="@string/reminderLabel"
+        android:layout_toLeftOf="@+id/reminderET"
+        android:layout_alignLeft="@id/dayLabel"
+        android:layout_alignBottom="@id/reminderET"/>
 
-    <TableRow>
-        <Button
-            android:id="@+id/setRemiderButton"
-            android:text="@string/setReminderButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    </TableRow>
+    <EditText
+        android:id="@+id/reminderET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="bedsheets"
+        android:layout_alignLeft="@id/dayET"
+        android:layout_below="@+id/dayET"/>
 
-</TableLayout>
+    <Button
+        android:layout_centerHorizontal="true"
+        android:id="@+id/setReminderButton"
+        android:text="@string/setReminderButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/reminderLabel"/>
+
+</RelativeLayout>
