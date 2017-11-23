@@ -20,13 +20,23 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
     String Str_Fabric, Str_Stains;
 
 
-
+    // Why was the main screen previously the stain_solver layout?
+    /*
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.stain_solver);
 
     }
+    */
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.homescreen);
+
+    }
+
 
     @Override
     public void onClick(DialogInterface dialogInterface, int i) {

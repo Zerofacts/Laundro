@@ -2,6 +2,7 @@ package collegestudents.laundro;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Button;
 
 public class ReminderActivity extends AppCompatActivity
 {
@@ -11,4 +12,5 @@ public class ReminderActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reminder);
     }
+
 }

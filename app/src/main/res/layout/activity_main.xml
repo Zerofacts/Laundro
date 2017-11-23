@@ -7,14 +7,6 @@
     android:orientation="vertical"
     android:gravity="center">
 
-    <Button
-        android:id="@+id/newReminderButton"
-        android:text="@string/setReminderButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="reminder"/>
-
-    <!--The below should be moved to a different screen-->
 <!--<GridView xmlns:android="http://schemas.android.com/apk/res/android"-->
     <!--android:id="@+id/gridview"-->
     <!--android:layout_width="match_parent"-->
