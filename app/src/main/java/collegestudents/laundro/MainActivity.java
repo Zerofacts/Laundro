@@ -45,4 +45,11 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
         Button StainSubmit = (Button) findViewById(R.id.StainSubmit);
 
     }
+
+    // Method to go the the reminder screen when clicked
+    public void reminder(View v)
+    {
+        Intent myIntent = new Intent(this, ReminderActivity.class);
+        this.startActivity(myIntent);
+    }
 }
