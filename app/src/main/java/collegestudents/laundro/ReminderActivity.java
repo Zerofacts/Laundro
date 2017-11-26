@@ -30,18 +30,21 @@ public class ReminderActivity extends AppCompatActivity
         // Get a calendar with default timezone and locale
         Calendar myCalendar = Calendar.getInstance();
 
-        EditText daysET = (EditText)findViewById(R.id.reminderET);
+        EditText daysET = (EditText)findViewById(R.id.dayET);
+        String message = ((EditText)findViewById(R.id.reminderET)).getText().toString();
         int daysFromNow = Integer.parseInt(daysET.getText().toString());
 
         // Add the number of days to the calendar
         myCalendar.add(Calendar.DATE, daysFromNow);
 
-        Intent myIntent = new Intent(this, AlarmReciever.class);
+        Intent myIntent = new Intent(this, AlarmReceiver.class);
+        myIntent.putExtra("REMINDER_TEXT", message); // Put the reminder text in the intent
+
         PendingIntent myPI = PendingIntent.getBroadcast(this, 001, myIntent, 0);
         AlarmManager alarm = (AlarmManager)getSystemService(ALARM_SERVICE);
         alarm.set(AlarmManager.RTC_WAKEUP, myCalendar.getTimeInMillis(),myPI);
 
-
+        
     }
 
 }
