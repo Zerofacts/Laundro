@@ -1,12 +1,15 @@
-// https://stackoverflow.com/questions/28017943/android-how-to-set-a-notification-to-a-specific-date-in-the-future
-// ^ used as a guide for this section
+
 
 package collegestudents.laundro;
 
 import android.app.AlarmManager;
+import android.app.Notification;
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemClock;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -28,27 +31,44 @@ public class ReminderActivity extends AppCompatActivity
 
     public void setReminder(View v)
     {
-        // Get a calendar with default timezone and locale
-        Calendar myCalendar = Calendar.getInstance();
-
         EditText daysET = (EditText)findViewById(R.id.dayET);
         String message = ((EditText)findViewById(R.id.reminderET)).getText().toString();
-        int daysFromNow = Integer.parseInt(daysET.getText().toString());
 
-        // Add the number of days to the calendar
-        myCalendar.add(Calendar.SECOND, daysFromNow);
+        // For now, I'm using seconds in order to test the notification
+        int daysFromNow = Integer.parseInt(daysET.getText().toString()) * 1000;
 
-        Intent myIntent = new Intent(this, Receiver.class);
-        myIntent.putExtra("REMINDER_TEXT", message); // Put the reminder text in the intent
-
-        PendingIntent myPI = PendingIntent.getBroadcast(this, 001, myIntent, 0);
-        AlarmManager alarm = (AlarmManager)getSystemService(ALARM_SERVICE);
-        alarm.set(AlarmManager.RTC_WAKEUP, myCalendar.getTimeInMillis(),myPI);
-
+        setNotification(daysFromNow);
 
         Toast.makeText(this, "Reminder set for " +  message + " in " + daysFromNow, Toast.LENGTH_LONG).show();
-
-
     }
+
+    public void setNotification(int deltaTime)
+    {
+        Intent nIntent = new Intent(this, NReceiver.class);
+
+        // Put the notification object in the intent so that the reciever can get it
+        nIntent.putExtra("notification", makeNotification());
+        PendingIntent pIntent = PendingIntent.getBroadcast(this, 0, nIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        // Add the change in time to the current clock to get when it should happen
+        long futureTime = SystemClock.elapsedRealtime() + deltaTime;
+
+        // Set the alarm
+        AlarmManager aManager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
+        aManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, futureTime, pIntent);
+    }
+
+    // Method that makes the notifcation
+    private Notification makeNotification()
+    {
+        String message = ((EditText)findViewById(R.id.reminderET)).getText().toString();
+        NotificationCompat.Builder notifBuilder = new NotificationCompat.Builder(this)
+                .setContentTitle("Time to do laundry!")
+                .setSmallIcon(R.drawable.bleichen)
+                .setContentText(message);
+        Notification n = notifBuilder.build();
+        return n;
+    }
+
 
 }
