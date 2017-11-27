@@ -26,6 +26,9 @@
             android:name=".ReminderActivity"
             android:parentActivityName=".MainActivity">
         </activity>
+        <!--The below permissions are needed for the reminder functionality-->
+        <uses-permission android:name="android.permission.VIBRATE"/>
+        <uses-permission android:name="android.permission.WAKE_LOCK"/>
+        <receiver android:name=".NReceiver" android:enabled="true"/>
     </application>
-
 </manifest>

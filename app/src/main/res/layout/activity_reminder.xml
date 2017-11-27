@@ -1,54 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="10dp">
+<ScrollView android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView
-        android:id="@+id/dayLabel"
-        android:paddingRight="5dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:labelFor="@+id/dayET"
-        android:layout_alignBottom="@id/dayET"
-        android:text="@string/dayLabel"/>
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
 
-    <EditText
-        android:id="@+id/dayET"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/dayLabel"
-        android:hint="7"
-        android:inputType="number"/>
+        <DatePicker
+            android:id="@+id/reminderDP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
-    <TextView
-        android:id="@+id/reminderLabel"
-        android:paddingRight="5dp"
-        android:paddingBottom="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:labelFor="@+id/reminderTV"
-        android:text="@string/reminderLabel"
-        android:layout_toLeftOf="@+id/reminderET"
-        android:layout_alignLeft="@id/dayLabel"
-        android:layout_alignBottom="@id/reminderET"/>
+        <TimePicker
+            android:id="@+id/reminderTP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/reminderDP"
+            android:timePickerMode="spinner"/>
 
-    <EditText
-        android:id="@+id/reminderET"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="bedsheets"
-        android:layout_alignLeft="@id/dayET"
-        android:layout_below="@+id/dayET"/>
+        <!--<TextView-->
+        <!--android:id="@+id/dayLabel"-->
+        <!--android:paddingRight="5dp"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:labelFor="@+id/dayET"-->
+        <!--android:layout_alignBottom="@id/dayET"-->
+        <!--android:text="@string/dayLabel"/>-->
 
-    <Button
-        android:layout_centerHorizontal="true"
-        android:id="@+id/setReminderButton"
-        android:text="@string/setReminderButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/reminderLabel"/>
+        <!--<EditText-->
+        <!--android:id="@+id/dayET"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_toRightOf="@+id/dayLabel"-->
+        <!--android:hint="7"-->
+        <!--android:inputType="number"/>-->
 
-</RelativeLayout>
+        <EditText
+            android:id="@+id/reminderET"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/reminderTP"
+            android:hint="bedsheets"/>
+        <!--android:layout_alignLeft="@id/dayET"-->
+        <!--android:layout_below="@+id/dayET"/>-->
+        
+        <TextView
+            android:id="@+id/reminderLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/reminderET"
+            android:layout_alignLeft="@id/reminderTP"
+            android:layout_toLeftOf="@+id/reminderET"
+            android:labelFor="@+id/reminderTV"
+            android:paddingBottom="10dp"
+            android:paddingRight="5dp"
+            android:text="@string/reminderLabel"/>
+        <!--android:layout_alignLeft="@id/dayLabel"-->
+        <!--android:layout_alignBottom="@id/reminderET"/>-->
+
+
+
+        <Button
+            android:id="@+id/setReminderButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/reminderLabel"
+            android:layout_centerHorizontal="true"
+            android:onClick="setReminder"
+            android:text="@string/setReminderButton"/>
+
+
+    </RelativeLayout>
+</ScrollView>
