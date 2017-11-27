@@ -26,13 +26,14 @@
             android:name=".ReminderActivity"
             android:parentActivityName=".MainActivity">
         </activity>
+        <uses-permission android:name="android.permission.VIBRATE"/>
+        <uses-permission android:name="android.permission.WAKE_LOCK"/>
+        <service android:name=".Receiver" android:enabled="true">
+            <intent-filter> <action android:name="NOTIFICATION_SERVICE"/> </intent-filter>
+        </service>
     </application>
     <!--The below permissions are needed for the reminder functionality-->
     <!--https://stackoverflow.com/questions/28017943/android-how-to-set-a-notification-to-a-specific-date-in-the-future-->
     <!--^ used as guide-->
-    <uses-permission android:name="android.permission.VIBRATE"/>
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
-    <service android:name=".Receiver2" android:enabled="true">
-        <intent-filter><action android:name="NOTIFICATION_SERVICE"/></intent-filter>
-    </service>
+
 </manifest>

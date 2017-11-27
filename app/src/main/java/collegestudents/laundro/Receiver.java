@@ -11,8 +11,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.IBinder;
 import android.support.v4.app.NotificationCompat;
+import android.widget.Toast;
 
-public class AlarmReceiver extends Service
+import junit.framework.Test;
+
+public class Receiver extends Service
 {
     private String rText = "Message not set";
 
@@ -26,13 +29,17 @@ public class AlarmReceiver extends Service
     @Override
     public void onCreate()
     {
-        Intent i = new Intent();
+        Intent i = new Intent(this, Test.class);
         PendingIntent myPI = PendingIntent.getActivity(this, 123, i, 0);
         NotificationCompat.Builder notifBuilder = new NotificationCompat.Builder(this)
                 .setContentTitle("Time to do laundry!")
-                .setContentText(rText);
+                .setContentText(rText)
+                .setAutoCancel(true);
+
         notifBuilder.setContentIntent(myPI);
-        //notifBuilder.setDefaults(Notification.DEFAULT_SOUND);
+        notifBuilder.setDefaults(Notification.DEFAULT_SOUND);
+        notifBuilder.setAutoCancel(true);
+
         NotificationManager nManager = (NotificationManager)this.
                 getSystemService(Context.NOTIFICATION_SERVICE);
         nManager.notify(123, notifBuilder.build());

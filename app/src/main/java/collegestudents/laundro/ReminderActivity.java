@@ -13,6 +13,7 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -35,16 +36,19 @@ public class ReminderActivity extends AppCompatActivity
         int daysFromNow = Integer.parseInt(daysET.getText().toString());
 
         // Add the number of days to the calendar
-        myCalendar.add(Calendar.DATE, daysFromNow);
+        myCalendar.add(Calendar.SECOND, daysFromNow);
 
-        Intent myIntent = new Intent(this, AlarmReceiver.class);
+        Intent myIntent = new Intent(this, Receiver.class);
         myIntent.putExtra("REMINDER_TEXT", message); // Put the reminder text in the intent
 
         PendingIntent myPI = PendingIntent.getBroadcast(this, 001, myIntent, 0);
         AlarmManager alarm = (AlarmManager)getSystemService(ALARM_SERVICE);
         alarm.set(AlarmManager.RTC_WAKEUP, myCalendar.getTimeInMillis(),myPI);
 
-        
+
+        Toast.makeText(this, "Reminder set for " +  message + " in " + daysFromNow, Toast.LENGTH_LONG).show();
+
+
     }
 
 }
