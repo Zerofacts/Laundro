@@ -64,7 +64,7 @@ public class ReminderActivity extends AppCompatActivity
         String message = ((EditText)findViewById(R.id.reminderET)).getText().toString();
         NotificationCompat.Builder notifBuilder = new NotificationCompat.Builder(this)
                 .setContentTitle("Time to do laundry!")
-                .setSmallIcon(R.drawable.bleichen)
+                .setSmallIcon(R.drawable.launcher_icon)
                 .setContentText(message);
         Notification n = notifBuilder.build();
         return n;
