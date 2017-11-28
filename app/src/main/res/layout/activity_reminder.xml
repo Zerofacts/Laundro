@@ -12,33 +12,19 @@
 
         <DatePicker
             android:id="@+id/reminderDP"
+            android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:datePickerMode="spinner"
+            android:calendarViewShown="false"/>
 
         <TimePicker
             android:id="@+id/reminderTP"
+            android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/reminderDP"
             android:timePickerMode="spinner"/>
-
-        <!--<TextView-->
-        <!--android:id="@+id/dayLabel"-->
-        <!--android:paddingRight="5dp"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:labelFor="@+id/dayET"-->
-        <!--android:layout_alignBottom="@id/dayET"-->
-        <!--android:text="@string/dayLabel"/>-->
-
-        <!--<EditText-->
-        <!--android:id="@+id/dayET"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignParentTop="true"-->
-        <!--android:layout_toRightOf="@+id/dayLabel"-->
-        <!--android:hint="7"-->
-        <!--android:inputType="number"/>-->
 
         <TextView
             android:id="@+id/reminderLabel"
@@ -50,23 +36,14 @@
             android:paddingBottom="10dp"
             android:paddingRight="5dp"
             android:text="@string/reminderLabel"/>
-        <!--android:layout_alignLeft="@id/dayLabel"-->
-        <!--android:layout_alignBottom="@id/reminderET"/>-->
 
         <EditText
             android:id="@+id/reminderET"
             android:layout_alignBottom="@id/reminderLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:layout_toRightOf="@+id/reminderLabel"
             android:hint="ex: bedsheets"/>
-        <!--android:layout_alignLeft="@id/dayET"-->
-        <!--android:layout_below="@+id/dayET"/>-->
-        
-
-
-
 
         <Button
             android:id="@+id/setReminderButton"
