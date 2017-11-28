@@ -6,6 +6,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -29,6 +30,7 @@ public class ReminderActivity extends AppCompatActivity
     {
         DatePicker reminderDP = (DatePicker)findViewById(R.id.reminderDP);
         TimePicker reminderTP = (TimePicker)findViewById(R.id.reminderTP);
+        EditText reminderET = (EditText)findViewById(R.id.reminderET);
 
         // Create the calendar that will hold the date and time for the reminder
         Calendar cal = Calendar.getInstance();
@@ -41,7 +43,10 @@ public class ReminderActivity extends AppCompatActivity
         setNotification(cal.getTimeInMillis());
 
         // Get the reminder text
-        String message = ((EditText)findViewById(R.id.reminderET)).getText().toString();
+        String message = reminderET.getText().toString();
+
+        // Clear the reminder EditText
+        reminderET.setText("");
 
         // Show a toast to the user
         Toast.makeText(this, "Reminder set for " + message + "!", Toast.LENGTH_LONG).show();
