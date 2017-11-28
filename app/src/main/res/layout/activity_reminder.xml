@@ -40,28 +40,31 @@
         <!--android:hint="7"-->
         <!--android:inputType="number"/>-->
 
-        <EditText
-            android:id="@+id/reminderET"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/reminderTP"
-            android:hint="bedsheets"/>
-        <!--android:layout_alignLeft="@id/dayET"-->
-        <!--android:layout_below="@+id/dayET"/>-->
-        
         <TextView
             android:id="@+id/reminderLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/reminderET"
+            android:layout_below="@+id/reminderTP"
             android:layout_alignLeft="@id/reminderTP"
-            android:layout_toLeftOf="@+id/reminderET"
             android:labelFor="@+id/reminderTV"
             android:paddingBottom="10dp"
             android:paddingRight="5dp"
             android:text="@string/reminderLabel"/>
         <!--android:layout_alignLeft="@id/dayLabel"-->
         <!--android:layout_alignBottom="@id/reminderET"/>-->
+
+        <EditText
+            android:id="@+id/reminderET"
+            android:layout_alignBottom="@id/reminderLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_toRightOf="@+id/reminderLabel"
+            android:hint="ex: bedsheets"/>
+        <!--android:layout_alignLeft="@id/dayET"-->
+        <!--android:layout_below="@+id/dayET"/>-->
+        
+
 
 
 
