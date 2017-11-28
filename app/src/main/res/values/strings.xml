@@ -36,8 +36,26 @@
     </string-array>
 
     <!--activity_reminder strings-->
-    <string name="reminderLabel">Reminder</string>
+    <string name="reminderLabel">Reminder Message</string>
     <string name="setReminderButton">Set Reminder</string>
     <string name="dayLabel">Days from now</string>
+
+    <string name="continueButton">Continue</string>
+    <string name="info">
+        Welcome to Laundro!
+        \n
+        \n
+        Boy this app sure is great. You can\n
+        use it for all your laundry needs.\n
+        \n
+        Our features include:\n
+        1. A timer for your washing\n
+        2. A wash icon glossary\n
+        3. A stain guide\n
+        4. A reminder system for your laundry\n
+        \n
+        Click continue when you are ready for\n
+        the Laundro experience.
+    </string>
 
 </resources>
