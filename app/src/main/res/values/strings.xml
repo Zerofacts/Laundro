@@ -40,4 +40,6 @@
     <string name="setReminderButton">Set Reminder</string>
     <string name="dayLabel">Days from now</string>
 
+    <string name="continueButton">Continue</string>
+
 </resources>
