@@ -11,14 +11,15 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/Image"
         android:src="@drawable/bleichen"
+
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/Image"
-        android:textSize="15sp"
-        android:text="Demo"
+        android:textSize="20sp"
+        android:text="Use any Bleach if needed"
         />
 
 
